@@ -17,7 +17,7 @@
 
 
 
-// var test = Number(4);
+var test = Number(4);
 
 //test.prototype.__proto___ = Number.prototype.proto = Object.prototype.__proto__ = null;
 
@@ -32,42 +32,26 @@
 // b.test()
 
 
-// function Vehicle() {
-//     this.move = function() {
-//         console.log('move')
-//     }
-// }
-
-// function Car() {
-//     Vehicle.apply(this)
-
-//     var parentMove = this.move;
-//     this.move = function() {
-//         parentMove.apply(this)
-//         console.log('car')
-//     }
-// }
-
-
-// var a = new Car();
-// a.move()
-
-function Calculator (data) {
-    var that = data;
-    this.data = function(A, B) {
-        return that.A + that.B;
-    }
- 
-    this.showResult = function () {
-        alert(this.data());
+function Vehicle() {
+    this.move = function() {
+        console.log('move')
     }
 }
-var calculator = new Calculator({
-    A:1, 
-    B:6
- });
 
-calculator.showResult();
+function Car() {
+    Vehicle.apply(this)
+
+    this.parentMove = this.move;
+    this.move = function() {
+        console.log('car')
+    }
+}
+
+
+var a = new Car();
+a.parentMove()
+
+
 // function Hamster() {}
 
 // Hamster.prototype.food = []; // пустой "живот"

@@ -17,7 +17,7 @@
 
 
 
-// var test = Number(4);
+var test = Number(4);
 
 //test.prototype.__proto___ = Number.prototype.proto = Object.prototype.__proto__ = null;
 
@@ -32,30 +32,30 @@
 // b.test()
 
 
-// function Vehicle() {
-//     this.move = function() {
-//         console.log('move')
-//     }
-// }
+function Vehicle() {
+    this.move = function() {
+        console.log('move')
+    }
+}
 
-// function Car() {
-//     Vehicle.apply(this)
+function Car() {
+    Vehicle.apply(this)
 
-//     var parentMove = this.move;
-//     this.move = function() {
-//         parentMove.apply(this)
-//         console.log('car')
-//     }
-// }
+    var parentMove = this.move;
+    this.move = function() {
+        parentMove.apply(this)
+        console.log('car')
+    }
+}
 
 
-// var a = new Car();
-// a.move()
+var a = new Car();
+a.move()
 
 function Calculator (data) {
-    var that = data;
+    
     this.data = function(A, B) {
-        return that.A + that.B;
+        return this.A + this.B;
     }
  
     this.showResult = function () {

@@ -55,7 +55,7 @@
 function Calculator (data) {
     var that = data;
     this.data = function(A, B) {
-        return that.A + that.B;
+        return this.A + this.B;
     }
  
     this.showResult = function () {

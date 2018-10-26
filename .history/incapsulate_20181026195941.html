@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+ <head>
+    <title>Object's methods</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link rel="stylesheet" href="_/css/style.css">
+     <script src="_/js/script.js"></script>
+ </head>
+<body>
+<div class="container">
+<h2>Incapsulate</h2>
+<ul id="results"></ul>
+<!-- ************************* -->
+<script>
+// Incapsulation -> скрытие свойств и методов
+
+
+
+var test = Number(4);
+
+//test.prototype.__proto___ = Number.prototype.proto = Object.prototype.__proto__ = null;
+
+
+var a = Number(4);
+
+console.log(typeof a.toString())
+
+
+
+// var firstClass = function() {
+//     this.a = 4;
+// }
+
+// firstClass.prototype.testFunction = function() {
+//     console.log(3)
+// }
+
+// var first = new firstClass();
+
+// var secondClass = function() {
+//     testClass.call(this)
+// }
+
+// test2Class.prototype = Object.create(testClass.prototype)
+// test2Class.prototype.constructor = test2Class;
+
+
+// var test2 = new test2Class()
+// console.log(test2.a)
+// test2.testFunction();
+
+
+
+// console.log(test2)
+
+
+// var test = new Number(2);
+
+
+
+
+
+
+
+
+
+
+function inherit(proto) {
+  function F() {};
+  F.prototype = proto;
+  var object = new F;
+  return object;
+}
+
+function extend(Child, Parent) {
+  var F = function() { };
+  F.prototype = Parent.prototype;
+  Child.prototype = new F();
+  Child.prototype.constructor = Child;
+  Child.superclass = Parent.prototype;
+}
+
+
+
+</script>
+</div>
+<!-- 
+class Название [extends Родитель] {
+  constructor
+  методы
+} -->
+</body>
+</html>

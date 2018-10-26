@@ -17,7 +17,7 @@
 
 
 
-// var test = Number(4);
+var test = Number(4);
 
 //test.prototype.__proto___ = Number.prototype.proto = Object.prototype.__proto__ = null;
 
@@ -33,41 +33,19 @@
 
 
 // function Vehicle() {
-//     this.move = function() {
-//         console.log('move')
-//     }
+//     this.move = 'move'
 // }
 
 // function Car() {
 //     Vehicle.apply(this)
-
-//     var parentMove = this.move;
-//     this.move = function() {
-//         parentMove.apply(this)
-//         console.log('car')
-//     }
+//     this.move = 'move'
 // }
 
 
-// var a = new Car();
-// a.move()
+// var a = new Vehicle();
 
-function Calculator (data) {
-    var that = data;
-    this.data = function(A, B) {
-        return that.A + that.B;
-    }
- 
-    this.showResult = function () {
-        alert(this.data());
-    }
-}
-var calculator = new Calculator({
-    A:1, 
-    B:6
- });
+// console.log(a.test)
 
-calculator.showResult();
 // function Hamster() {}
 
 // Hamster.prototype.food = []; // пустой "живот"
@@ -110,7 +88,7 @@ function Rabbit(name) {
 
 
 Rabbit.prototype = Object.create(Animal.prototype);
-Rabbit.prototype.constructor = Rabbit;
+// Rabbit.prototype.constructor = Rabbit;
 
 Rabbit.prototype.jump = function() {
   this.speed++;
@@ -118,7 +96,7 @@ Rabbit.prototype.jump = function() {
 };
 
 var rabbit = new Rabbit('Кроль');
-console.log(rabbit)
+rabbit.jump()
 
 
 
